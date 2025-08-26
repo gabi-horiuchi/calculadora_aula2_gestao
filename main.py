@@ -1,6 +1,7 @@
 from time import sleep
 
-while True:
+loop = True
+while loop:
     count = 0
     count_bi_years = 0
     print("Descubra quantos anos bissextos existem de 2000 até x (Limite 4000)")
@@ -21,3 +22,17 @@ while True:
         print("Por favor insira um valor entre 2000 e 4000") 
         print()
         sleep(1.5)
+    
+    while True:
+        response = str(input("Deseja verificar novamente? [S/N]"))
+        response = response.upper()
+        if response == "SIM" or response == "S":
+            loop = True
+            break
+        if response == "NAO" or response == "N":
+            loop = False
+            break
+        else:
+            sleep(0.5)
+            print("Por favor insira uma resposta válida!")
+            
